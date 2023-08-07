@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 # Standard library imports
+from models import User, Movie, UserMovie
 
 # Remote library imports
 from flask import request
