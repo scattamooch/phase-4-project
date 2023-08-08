@@ -6,8 +6,8 @@ from models import User, Movie, UserMovie
 
 # Remote library imports
 from faker import Faker
-
 fake = Faker()
+
 
 # Local imports
 from app import app
@@ -41,6 +41,7 @@ if __name__ == "__main__":
                 )
                 db.session.add(user)
             db.session.commit()
+
 
         # Create Movies
         def create_movies():
@@ -116,7 +117,7 @@ if __name__ == "__main__":
                     title=title,
                     genres=genre,
                     image=image,
-                )
+
                 db.session.add(movie)
             db.session.commit()
 
@@ -126,12 +127,13 @@ if __name__ == "__main__":
             for user in users:
                 for movie in movies:
                     user_movie = UserMovie(
+
                         user=user,
                         movie=movie,
                         favorite=fake.boolean(),
                         seen=fake.boolean(),
                         wishlist=fake.boolean(),
-                    )
+
                     db.session.add(user_movie)
             db.session.commit()
 
@@ -145,3 +147,6 @@ if __name__ == "__main__":
         create_user_movies()
 
         print("Done seeding!")
+        
+        print("Done seeding!")
+
