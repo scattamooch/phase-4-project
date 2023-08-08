@@ -112,11 +112,12 @@ if __name__ == "__main__":
                 "https://cdn.shopify.com/s/files/1/0057/3728/3618/products/44b26f88e0fb3f1bf0a0660c099b8b19_b27d3a0c-9867-4ef1-a59d-f5304521c18d_500x749.jpg?v=1573594939",
             ]
 
-            for title, genre, image in zip(movie_titles, movie_genres, movie_images):
+            for movie_title, movie_genre, movie_image in zip(movie_titles, movie_genres, movie_images):
                 movie = Movie(
-                    title=title,
-                    genres=genre,
-                    image=image,
+                    name=movie_title,
+                    genres=movie_genre,
+                    image=movie_image,
+                )
 
                 db.session.add(movie)
             db.session.commit()
@@ -133,6 +134,7 @@ if __name__ == "__main__":
                         favorite=fake.boolean(),
                         seen=fake.boolean(),
                         wishlist=fake.boolean(),
+                    )
 
                     db.session.add(user_movie)
             db.session.commit()

@@ -32,7 +32,7 @@ class Movie(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
     image = db.Column(db.String, nullable=False)
-    description = db.Column(db.Text) 
+    # description = db.Column(db.Text) 
     genres = db.Column(db.String)
 
     #relationships
