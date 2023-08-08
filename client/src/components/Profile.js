@@ -7,8 +7,8 @@ function Profile({ userId }) {
   const [watchlist, setWatchlist] = useState([]);
 
   useEffect(() => {
-    // Fetch User Details
-    fetch(`http://127.0.0.1:5555/users/${userId}`)
+    // Fetch Users
+    fetch(`http://127.0.0.1:5555/users`)
       .then((response) => response.json())
       .then((data) => {
         setUser(data);
