@@ -11,62 +11,61 @@ function SignUp() {
 
   function handleFirstNameChange(event) {
     setFirstName(event.target.value)
-    console.log(event.target.value)
   };
 
   function handleLastNameChange(event) {
     setLastName(event.target.value)
-    console.log(event.target.value)
   };
 
   function handleUsernameChange(event) {
     setUsername(event.target.value)
-    console.log(event.target.value)
   };
 
   function handlePasswordChange(event) {
     setPassword(event.target.value)
-    console.log(event.target.value)
   }
 
   function handleProfPicChange(event) {
     setProfilePic(event.target.value)
-    console.log(event.target.value)
   };
 
   function handleAboutMeChange(event) {
     setAboutMe(event.target.value)
-    console.log(event.target.value)
   }
 
-  function handleSubmit(event) {
+  const newUserData = {}
+  function handleSubmit(event, newUserData) {
     event.preventDefault();
-    const newUserData = {
+    newUserData = {
       first_name: handleFirstName,
       last_name: handleLastName,
-      usename: handleUsername,
+      username: handleUsername,
       password: handlePassword,
       profile_picture: handleProfilePic,
       about_me: handleAboutMe
     }
     console.log("You tried to submit")
 
-    useEffect((event) => {
       fetch("http://127.0.0.1:5555/users", {
         method: "POST",
         body: JSON.stringify(newUserData),
+        headers: {
+          "Content-Type": "application/json"
+        }
       })
         .then((r) => r.json())
         .then((result) => {
           console.log(result)
+          setFirstName("")
+          setLastName("")
+          setUsername("")
+          setPassword("")
+          setProfilePic("")
+          setAboutMe("")
         })
-        .catch((err) => console.log("Error: something went wrong"))
-    })
+        .catch((err) => console.log("Error: something went wrong(front end)"))
   }
-
-
-
-
+  
   return (
     <div>
     <div className="sign-up-container">
