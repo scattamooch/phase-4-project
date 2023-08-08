@@ -1,8 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { Switch, Route } from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch, NavLink, Link} from "react-router-dom";
+import Navbar from "./Navbar.js"
+import MovieCatalog from "./MovieCatalog.js"
+import Main from "./Main.js"
 
 function App() {
-  return <h1>Phase 4 Project Client</h1>;
+  return (
+    <div className="component-container">
+      <Router>
+        <Navbar />
+        <Switch>
+
+          <Route exact path="/">
+            <Main />
+          </Route>
+
+          <Route path="/movies">
+            <MovieCatalog />
+          </Route>
+
+        </Switch>
+      </Router>
+    </div>
+  )
 }
 
 export default App;

@@ -1,7 +1,61 @@
-:root {
-  --bg: #282c34;
-  --header: #fff;
-  --link: #61dafb;
-  --text: hsla(0, 0%, 100%, 0.88);
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~Navbar~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.nav-bar-container {
+  display: flex;
+  justify-content: space-between ;
+  align-items: center;
+  height: 85px;
+  box-shadow: 5px 5px 5px rgb(206, 192, 255);
 }
 
+.nav-links {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: #e6e6e6;
+  color: #333;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 5px 3px 3px rgb(54, 29, 29);
+}
+
+.nav-links:active {
+  background-color: lightblue;
+}
+
+.nav-bar-title {
+  flex-grow: 1;
+  text-align: center;
+  margin-right: 200px;
+  padding-right: 200px;
+}
+
+.logo {
+  margin-right: 100px;
+  height: 100px;
+  width: 125px;
+  /* box-shadow: 5px 3px 5px rgb(199, 103, 103);
+  border-radius: 25px; */
+}
+
+.nav-bar {
+  background-color: rgb(10, 54, 177);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~MovieCatalog~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.movies-header {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.movies-list {
+text-align: center;
+background-color: aqua;
+}
+
+.centered {
+  justify-content: center !important;
+  align-items: center;
+}
