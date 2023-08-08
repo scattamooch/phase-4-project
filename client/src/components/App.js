@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Switch, NavLink, Link} from "react-route
 import Navbar from "./Navbar.js"
 import MovieCatalog from "./MovieCatalog.js"
 import Main from "./Main.js"
-
+import Profile from "./Profile.js";
 import Login from "./Login.js"
 import SignUp from "./SignUp.js"
 
@@ -32,6 +32,7 @@ function App() {
 
           <Route path="/sign-up">
             <SignUp />
+              <Profile/>
           </Route>
 
         </Switch>

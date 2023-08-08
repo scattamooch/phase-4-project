@@ -15,7 +15,6 @@ function Navbar() {
             <NavLink exact to="/login" className="auth-link">Login</NavLink>
             <NavLink exact to="/sign-up" className="auth-link">Sign Up</NavLink>
           </div>
-        </div>
       </nav>
   );
 }
