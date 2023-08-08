@@ -4,6 +4,9 @@ import Navbar from "./Navbar.js"
 import MovieCatalog from "./MovieCatalog.js"
 import Main from "./Main.js"
 
+import Login from "./Login.js"
+import SignUp from "./SignUp.js"
+
 function App() {
   return (
     <div className="component-container">
@@ -17,6 +20,18 @@ function App() {
 
           <Route path="/movies">
             <MovieCatalog />
+          </Route>
+
+          <Route path="/profile">
+            <Profile />
+          </Route>
+          
+          <Route path="/login">
+            <Login />
+          </Route>
+
+          <Route path="/sign-up">
+            <SignUp />
           </Route>
 
         </Switch>

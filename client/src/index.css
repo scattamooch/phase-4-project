@@ -1,11 +1,17 @@
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~Navbar~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .nav-bar-container {
-  display: flex;
-  justify-content: space-between ;
+  display: grid;
+  grid-template-columns: 1fr auto; /* Left column for navigation links, Right column for auth links */
   align-items: center;
   height: 85px;
   box-shadow: 5px 5px 5px rgb(206, 192, 255);
 }
+
+.nav-links-container {
+  display: flex;
+  align-items: center;
+}
+
 
 .nav-links {
   display: inline-block;
@@ -31,17 +37,33 @@
   padding-right: 200px;
 }
 
-.logo {
-  margin-right: 100px;
-  height: 100px;
-  width: 125px;
-  /* box-shadow: 5px 3px 5px rgb(199, 103, 103);
-  border-radius: 25px; */
-}
-
 .nav-bar {
   background-color: rgb(10, 54, 177);
 }
+
+.auth-links-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align auth links to the right */
+}
+
+.auth-link {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #e6e6e6;
+    color: #333;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 5px 3px 3px rgb(54, 29, 29);
+    align-items: right;
+  }
+  
+  .auth-link:active {
+    background-color: lightblue;
+  }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~MovieCatalog~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .movies-header {
@@ -58,4 +80,92 @@ background-color: aqua;
 .centered {
   justify-content: center !important;
   align-items: center;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~Login~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.login-container {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  height: 100vh; 
+}
+
+.login-container h1 {
+  margin-bottom: 20px;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-container input {
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-container button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: #e6e6e6;
+  color: #333;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 5px 3px 3px rgb(54, 29, 29);
+}
+
+.login-button:active {
+  background-color: lightblue;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~Sign-Up~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.sign-up-container {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  height: 100vh; 
+}
+
+.sign-up-container h1 {
+  margin-bottom: 20px;
+}
+
+.sign-up-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sign-up-container input {
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.sign-up-container button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: #e6e6e6;
+  color: #333;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 5px 3px 3px rgb(54, 29, 29);
+}
+
+.sign-up-button:active {
+  background-color: lightblue;
 }
