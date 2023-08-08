@@ -74,12 +74,12 @@ class UsersById(Resource):
                 except ValueError as v_error:
                     return make_response([str(v_error)], 400)
                 
-                db.session.commit()
-                return make_response(user.to_dict(only=(
-                "user_movies", "-user_movies.user", 
-                "-user_movies.movie.user_movies", "id", 
-                "first_name", "last_name", "username", 
-                "password", "profile_picture", "about_me", )), 200)
+            db.session.commit()
+            return make_response(user.to_dict(only=(
+            "user_movies", "-user_movies.user", 
+            "-user_movies.movie.user_movies", "id", 
+            "first_name", "last_name", "username", 
+            "password", "profile_picture", "about_me", )), 200)
             
     def delete(self, id):
         user = User.query.filter(User.id == id).first()
