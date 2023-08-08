@@ -19,7 +19,8 @@ class User(db.Model, SerializerMixin):
 
 
     #relationships
-    user_movies = db.relationship("UserMovie", back_populates="user")
+    user_movies = db.relationship("UserMovie", back_populates="user",
+        cascade="all, delete-orphan")
     movies = association_proxy("user_movies", "movie")
 
     def __repr__(self):
