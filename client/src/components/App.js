@@ -4,8 +4,8 @@ import Navbar from "./Navbar.js"
 import MovieCatalog from "./MovieCatalog.js"
 import Main from "./Main.js"
 import Profile from "./Profile.js";
-
-
+import Login from "./Login.js"
+import SignUp from "./SignUp.js"
 
 function App() {
   return (
@@ -23,6 +23,15 @@ function App() {
           </Route>
 
           <Route path="/profile">
+            <Profile />
+          </Route>
+          
+          <Route path="/login">
+            <Login />
+          </Route>
+
+          <Route path="/sign-up">
+            <SignUp />
               <Profile/>
           </Route>
 
