@@ -8,7 +8,7 @@ function Navbar() {
           <div className="nav-links-container">
             <NavLink exact to="/" className="nav-links">Home</NavLink>
             <NavLink exact to="/movies" className="nav-links">Movies</NavLink>
-            <NavLink exact to="/profile" className="nav-links">Profile</NavLink>
+            <NavLink exact to="/users" className="nav-links">Users</NavLink>
             <NavLink exact to="/" className="nav-links">Filler</NavLink>
           </div>
           <div className="auth-links-container">

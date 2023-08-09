@@ -169,3 +169,31 @@ background-color: aqua;
 .sign-up-button:active {
   background-color: lightblue;
 }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~Users/UserCards~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.view-profile-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #e6e6e6;
+    color: #333;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 5px 3px 3px rgb(54, 29, 29);
+  }
+  
+  .view-profile-button:active {
+    background-color: lightblue;
+  }
+
+  .users-header {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .users-list {
+    text-align: center;
+    }

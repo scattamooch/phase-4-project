@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import TransitionsModal from "./ValidationModal"
 
 function SignUp() {
 
@@ -44,7 +45,6 @@ function SignUp() {
       profile_picture: handleProfilePic,
       about_me: handleAboutMe
     }
-    console.log("You tried to submit")
 
       fetch("http://127.0.0.1:5555/users", {
         method: "POST",
@@ -56,27 +56,24 @@ function SignUp() {
         .then((r) => r.json())
         .then((result) => {
           console.log(result)
-          setFirstName("")
-          setLastName("")
-          setUsername("")
-          setPassword("")
-          setProfilePic("")
-          setAboutMe("")
-        })
+          }
+        )
         .catch((err) => console.log("Error: something went wrong(front end)"))
   }
-  
+
   return (
     <div>
     <div className="sign-up-container">
       <h1>Welcome to ?</h1>
-      <input type="text" placeholder="First name" onChange={handleFirstNameChange}/>
-      <input type="text" placeholder="Last name" onChange={handleLastNameChange}/>
-      <input type="text" placeholder="Username" onChange={handleUsernameChange}/>
-      <input type="text" placeholder="Password"onChange={handlePasswordChange}/>
-      <input type="text" placeholder="Paste an image link for a profile picture..." onChange={handleProfPicChange}/>
-      <textarea rows="6" cols="60" placeholder="Tell us anything about yourself that you might like to display on your profile page..." onChange={handleAboutMeChange}></textarea>
-      <button className="sign-up-button" onClick={handleSubmit}>Submit</button>
+        <form onSubmit={handleSubmit}>
+        <input type="text" placeholder="First name*" onChange={handleFirstNameChange}/>
+        <input type="text" placeholder="Last name*" onChange={handleLastNameChange}/>
+        <input type="text" placeholder="Username*" onChange={handleUsernameChange}/>
+        <input type="password" placeholder="Password*" onChange={handlePasswordChange}/>
+        <input type="text" placeholder="Paste an image link for a profile picture..." onChange={handleProfPicChange}/>
+        <textarea rows="6" cols="60" placeholder="Tell us anything about yourself that you might like to display on your profile page..." onChange={handleAboutMeChange}></textarea>
+        <button className="sign-up-button" type="submit">Submit</button>
+      </form>
     </div>
   </div>
   );
