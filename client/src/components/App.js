@@ -47,7 +47,7 @@ function App() {
           </Route>
 
           <Route path="/profile/:id">
-            <UserProfile />
+            <UserProfile activeUser={activeUser}/>
           </Route>
           
           <Route path="/login">
