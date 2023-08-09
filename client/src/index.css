@@ -127,6 +127,113 @@ background-color: aqua;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~Sign-Up~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.edit-container {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  height: 100vh; 
+}
+
+.edit-container h1 {
+  margin-bottom: 20px;
+}
+
+.edit-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-container input {
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.edit-container button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: #e6e6e6;
+  color: #333;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 5px 3px 3px rgb(54, 29, 29);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~Users/UserCards~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.view-profile-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: #e6e6e6;
+    color: #333;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 5px 3px 3px rgb(54, 29, 29);
+  }
+  
+  .view-profile-button:active {
+    background-color: lightblue;
+  }
+
+  .users-header {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .users-list {
+    text-align: center;
+    }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~Users/UserCards~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~User W/W/F Lists~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.full-page-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Left side takes 1 part, right side takes 2 parts */
+  gap: 20px; /* Gap between left and right sides */
+}
+
+.user-profile-left img {
+  height: 300px;
+  width: 300px;
+}
+
+.submit-cancel-edit-container {
+  display: flex !important;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.user-list-container {
+  display: flex; /* Use flex instead of flexbox */
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  list-style: none;
+}
+
+/* Add styling for individual movie items */
+.user-list-image {
+  width: 200px; /* Adjust the image width as needed */
+  height: auto;
+  margin: 5px;
+}
+
+.selected-list {
+  background-color: #8a7c7c;
+}
+
 .sign-up-container {
   display: flex;
   flex-direction: column; 
@@ -168,61 +275,4 @@ background-color: aqua;
 
 .sign-up-button:active {
   background-color: lightblue;
-}
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~Users/UserCards~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-.view-profile-button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-right: 10px;
-    background-color: #e6e6e6;
-    color: #333;
-    text-decoration: none;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    box-shadow: 5px 3px 3px rgb(54, 29, 29);
-  }
-  
-  .view-profile-button:active {
-    background-color: lightblue;
-  }
-
-  .users-header {
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-
-  .users-list {
-    text-align: center;
-    }
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~Users/UserCards~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~User W/W/F Lists~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-.full-page-container {
-  display: grid;
-  grid-template-columns: 1fr 2fr; /* Left side takes 1 part, right side takes 2 parts */
-  gap: 20px; /* Gap between left and right sides */
-}
-
-.user-list-container {
-  display: flex; /* Use flex instead of flexbox */
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  list-style: none;
-}
-
-/* Add styling for individual movie items */
-.user-list-image {
-  width: 200px; /* Adjust the image width as needed */
-  height: auto;
-  margin: 5px;
-}
-
-.selected-list {
-  background-color: #8a7c7c;
 }
