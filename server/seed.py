@@ -35,60 +35,24 @@ if __name__ == "__main__":
                     first_name=first_name,
                     last_name=last_name,
                     username=username,
-                    password="password",
-                    profile_picture="https://s3-alpha.figma.com/hub/file/948140848/1f4d8ea7-e9d9-48b7-b70c-819482fb10fb-cover.png",
+                    password="password1",
+                    profile_picture="https://cdn.vectorstock.com/i/preview-1x/77/30/default-avatar-profile-icon-grey-photo-placeholder-vector-17317730.jpg",
                     about_me="I like movies!",
                 )
                 db.session.add(user)
             db.session.commit()
 
-
         # Create Movies
         def create_movies():
             movie_titles = [
-                "The Shawshank Redemption",
-                "The Godfather",
-                "The Dark Knight",
-                "Pulp Fiction",
-                "Forrest Gump",
-                "Inception",
-                "The Matrix",
-                "Interstellar",
-                "Gladiator",
-                "The Lord of the Rings: The Fellowship of the Ring",
-                "Titanic",
-                "Avatar",
-                "Jurassic Park",
-                "The Lion King",
-                "Frozen",
-                "The Avengers",
-                "Deadpool",
-                "The Social Network",
-                "La La Land",
-                "The Grand Budapest Hotel",
-            ]
-            movie_genres = [
-                "Drama",
-                "Crime",
-                "Action",
-                "Crime",
-                "Drama",
-                "Sci-Fi",
-                "Sci-Fi",
-                "Sci-Fi",
-                "Action",
-                "Fantasy",
-                "Romance",
-                "Sci-Fi",
-                "Adventure",
-                "Animation",
-                "Animation",
-                "Action",
-                "Action",
-                "Drama",
-                "Musical",
-                "Comedy",
-            ]
+                "The Shawshank Redemption","The Godfather","The Dark Knight","Pulp Fiction","Forrest Gump",
+                "Inception","The Matrix","Interstellar","Gladiator","The Lord of the Rings: The Fellowship of the Ring",
+                "Titanic","Avatar","Jurassic Park","The Lion King","Frozen","The Avengers","Deadpool","The Social Network",
+                "La La Land","The Grand Budapest Hotel"]
+            
+            movie_genres = ["Drama","Crime","Action","Crime","Drama","Sci-Fi","Sci-Fi","Sci-Fi","Action","Fantasy",
+                            "Romance","Sci-Fi","Adventure","Animation","Animation","Action","Action","Drama","Musical","Comedy"]
+            
             movie_images = [
                 "https://cdn.shopify.com/s/files/1/0057/3728/3618/products/9f22e23817c4accbf052e0f91a2b7821_156f8e4f-814c-4dcb-896d-0b077053cd51_500x749.jpg?v=1573593734",
                 "https://cdn.shopify.com/s/files/1/0057/3728/3618/products/b5282f72126e4919911509e034a61f66_6ce2486d-e0da-4b7a-9148-722cdde610b8_500x749.jpg?v=1573616025",
@@ -148,7 +112,5 @@ if __name__ == "__main__":
         print("Seeding user_movie booleans...")
         create_user_movies()
 
-        print("Done seeding!")
-        
         print("Done seeding!")
 

@@ -3,11 +3,15 @@ import {BrowserRouter as Router, Route, Switch, NavLink, Link} from "react-route
 import Navbar from "./Navbar.js"
 import MovieCatalog from "./MovieCatalog.js"
 import Main from "./Main.js"
-import Profile from "./Profile.js";
+import Users from "./Users.js";
 import Login from "./Login.js"
 import SignUp from "./SignUp.js"
+import UserProfile from "./UserProfile.js"
 
 function App() {
+
+  const userId = 1
+
   return (
     <div className="component-container">
       <Router>
@@ -22,8 +26,12 @@ function App() {
             <MovieCatalog />
           </Route>
 
-          <Route path="/profile">
-            <Profile />
+          <Route path="/users">
+            <Users />
+          </Route>
+
+          <Route path="/profile/:id">
+            <UserProfile userId={userId}/>
           </Route>
           
           <Route path="/login">
@@ -32,7 +40,6 @@ function App() {
 
           <Route path="/sign-up">
             <SignUp />
-              <Profile/>
           </Route>
 
         </Switch>
