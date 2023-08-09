@@ -19,7 +19,7 @@ function Main() {
           <Link to="/users">Meet Our Users</Link>
         </li>
         <li>
-          <Link to={`/profile/${userId}`}>Your Profile</Link>
+          <Link>Your Profile</Link>
         </li>
       </ul>
     </div>

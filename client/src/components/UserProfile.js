@@ -4,7 +4,7 @@ import Watched from "./Watched.js"
 import Watchlist from "./Watchlist.js"
 import Favorites from "./Favorites.js"
 
-function UserProfile({userId}) {
+function UserProfile() {
 
   const { id } = useParams();
   const [userData, setUserData] = useState([]);

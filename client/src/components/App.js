@@ -10,8 +10,6 @@ import UserProfile from "./UserProfile.js"
 
 function App() {
 
-  const userId = 1
-
   const [loggedIn, setLoggedIn] = useState(false)
   const [activeUser, setActiveUser] = useState(null)
 
@@ -49,7 +47,7 @@ function App() {
           </Route>
 
           <Route path="/profile/:id">
-            <UserProfile userId={userId}/>
+            <UserProfile />
           </Route>
           
           <Route path="/login">
