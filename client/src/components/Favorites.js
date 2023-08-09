@@ -1,9 +1,23 @@
 import React from 'react';
 
-function Favorites() {
+function Favorites({userData}) {
+
+  if (!userData || !userData.user_movies) {
+    return <p>No data available</p>;
+  }
+
+  const filteredMovies = userData.user_movies.filter(movie => movie.favorite)
+
   return (
     <div>
-      <h1>Favorites</h1>
+      <h1 className="user-list-header">Favorites</h1>
+      <ul className="user-list-container">
+        {filteredMovies.map(watchedMovies => (
+          <li key={watchedMovies.movie.id}>
+            <img src={watchedMovies.movie.image} alt="movie" className="user-list-image"/>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

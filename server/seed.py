@@ -91,13 +91,16 @@ if __name__ == "__main__":
             movies = Movie.query.all()
             for user in users:
                 for movie in movies:
-                    user_movie = UserMovie(
+                    seen_check = fake.boolean()
+                    favorited = fake.boolean() if seen_check else False
+                    wishlisted = fake.boolean() if not (seen_check or favorited) else False
 
+                    user_movie = UserMovie(
                         user=user,
                         movie=movie,
-                        favorite=fake.boolean(),
-                        seen=fake.boolean(),
-                        wishlist=fake.boolean(),
+                        favorite=favorited,
+                        seen=seen_check,
+                        wishlist=wishlisted,
                     )
 
                     db.session.add(user_movie)
