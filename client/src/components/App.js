@@ -12,10 +12,28 @@ function App() {
 
   const userId = 1
 
+  const [loggedIn, setLoggedIn] = useState(false)
+  const [activeUser, setActiveUser] = useState(null)
+
+  function handleLogin(data) {
+    setActiveUser(data.user_id)
+    setLoggedIn(true)
+    console.log(`${data}`)
+    console.log(`Oh shit, somebody logged in: ${activeUser}`)
+  }
+
+  function handleLogout() {
+    setLoggedIn(false)
+    setActiveUser(null)
+    console.log(`Bye ${activeUser}`)
+    console.log("Oh shit, somebody logged out")
+  }
+
+
   return (
     <div className="component-container">
       <Router>
-        <Navbar />
+        <Navbar loginStatus={loggedIn} handleLogout={handleLogout}/>
         <Switch>
 
           <Route exact path="/">
@@ -35,7 +53,7 @@ function App() {
           </Route>
           
           <Route path="/login">
-            <Login />
+            <Login loginStatus = {loggedIn} handleLogin={handleLogin}/>
           </Route>
 
           <Route path="/sign-up">

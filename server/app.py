@@ -126,6 +126,24 @@ class UserMovies(Resource):
 
 api.add_resource(UserMovies, "/users-movies")
 
+class UserLogin(Resource):
+
+    def post(self):
+        data = request.get_json()
+        username = data.get('username')
+        password = data.get('password')
+
+        if not username or not password:
+            return {"message": "Invalid username or password"}, 400
+
+        user = User.query.filter_by(username=username).first()
+
+        if user and user.password == password:
+            return {"message": "Login successful", "user_id": user.id}, 200
+        else:
+            return {"message": "Invalid username or password"}, 401
+        
+api.add_resource(UserLogin, "/api/login")
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)

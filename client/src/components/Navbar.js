@@ -1,7 +1,8 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 
-function Navbar() {
+function Navbar({loginStatus, handleLogout}) {
+
   return (
           <nav className="nav-bar">
         <div className="nav-bar-container">
@@ -13,7 +14,9 @@ function Navbar() {
           </div>
           <div className="auth-links-container">
             <NavLink exact to="/login" className="auth-link">Login</NavLink>
-            <NavLink exact to="/sign-up" className="auth-link">Sign Up</NavLink>
+            {loginStatus ?
+            <NavLink exact to="/login" className="auth-link" onClick={handleLogout}>Sign Out</NavLink> :
+            <NavLink exact to="/sign-up" className="auth-link">Sign Up</NavLink> }
           </div>
           </div>
       </nav>
