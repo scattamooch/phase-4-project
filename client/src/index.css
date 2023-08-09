@@ -197,3 +197,32 @@ background-color: aqua;
   .users-list {
     text-align: center;
     }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~Users/UserCards~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~User W/W/F Lists~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.full-page-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Left side takes 1 part, right side takes 2 parts */
+  gap: 20px; /* Gap between left and right sides */
+}
+
+.user-list-container {
+  display: flex; /* Use flex instead of flexbox */
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  list-style: none;
+}
+
+/* Add styling for individual movie items */
+.user-list-image {
+  width: 200px; /* Adjust the image width as needed */
+  height: auto;
+  margin: 5px;
+}
+
+.selected-list {
+  background-color: #8a7c7c;
+}
