@@ -45,7 +45,7 @@ function App() {
           </Route>
 
           <Route path="/movies">
-            <MovieCatalog />
+            <MovieCatalog loginStatus={loggedIn} activeUser={activeUser}/>
           </Route>
 
           <Route path="/users">

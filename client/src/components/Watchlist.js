@@ -6,7 +6,7 @@ function Watchlist({userData}) {
     return <p>No data available</p>;
   }
 
-  const filteredMovies = userData.user_movies.filter(movie => movie.wishlist)
+  const filteredMovies = userData.user_movies.filter(movie => movie.wishlist && !movie.seen)
 
   return (
     <div>

@@ -110,6 +110,23 @@ class Movie(db.Model, SerializerMixin):
     user_movies = db.relationship("UserMovie", back_populates="movie")
     users = association_proxy("user_movies","user")
 
+    #validations
+    @validates("name")
+    def validates_name(self, key, new_name):
+        if not new_name:
+            raise ValueError("A title must be provided")
+        elif len(new_name) > 60:
+            raise ValueError("A title must be shorter than 25 characters")
+        else: 
+            return new_name
+        
+    @validates("image")
+    def validates_image(self, key, new_image):
+        if not new_image:
+            raise ValueError("An image link must be provided")
+        else:
+            return new_image
+
     def __repr__(self):
         return f'<Movie {self.id}: {self.name}>'
 

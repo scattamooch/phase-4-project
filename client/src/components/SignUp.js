@@ -3,6 +3,7 @@ import TransitionsModal from "./ValidationModal"
 import {useHistory} from "react-router-dom"
 
 function SignUp() {
+  
   const history = useHistory();
   const [handleFirstName, setFirstName] = useState("")
   const [handleLastName, setLastName] = useState("")
