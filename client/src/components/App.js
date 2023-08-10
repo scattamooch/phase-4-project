@@ -42,8 +42,8 @@ function App() {
         activeUser={activeUser}/>
         <Switch>
 
-          <Route exact path="/">
-            <Main />
+        <Route exact path="/">
+            <MovieCatalog loginStatus={loggedIn} activeUser={activeUser}/>
           </Route>
 
           <Route path="/movies">
