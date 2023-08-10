@@ -56,9 +56,9 @@ function MovieCard({id, name, image, description, genres, activeUser}) {
 
     const cardButtons = (
         <div className="movie-card-button-container">
-        <button className="go-button" name="seen" onClick={updateUserMovie}>I've seen this</button>
-        <button className="go-button" name="favorite" onClick={updateUserMovie}>Favorite</button>
-        <button className="go-button" name="wishlist"  onClick={updateUserMovie}>Add to Watchlist</button>
+        <button className="go-button" name="seen" onClick={updateUserMovie}>{seenMovie ? "Oops, I didn't see this movie" : "I've seen this movie"}</button>
+        <button className="go-button" name="favorite" onClick={updateUserMovie}>{favoriteMovie ? "Unfavorite" : "Favorite"}</button>
+        <button className="go-button" name="wishlist"  onClick={updateUserMovie}>{watchlistMovie ? "Remove from Watchlist" : "Add to Watchlist"}</button>
         </div>
     )
 
@@ -78,7 +78,7 @@ function MovieCard({id, name, image, description, genres, activeUser}) {
             </div>
             <div className="card-content">
                 <div className="card-header">{name}</div>
-                <p className="card__text">A description can go here. But naturally, we're gonna' start with some filler.</p>
+                <p className="card__text"></p>
                     {activeUser ? cardButtons : null}
             </div>
         </div>

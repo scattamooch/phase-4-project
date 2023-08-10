@@ -3,9 +3,11 @@ import { useParams } from 'react-router-dom';
 import Watched from "./Watched.js"
 import Watchlist from "./Watchlist.js"
 import Favorites from "./Favorites.js"
+import {useHistory} from "react-router-dom"
 
-function UserProfile({activeUser}) {
+function UserProfile({activeUser, handleLogout}) {
 
+  const history = useHistory()
   const { id } = useParams();
   const [userData, setUserData] = useState([]);
   const [selectedList, setSelectedList] = useState("watched")
@@ -80,6 +82,12 @@ function UserProfile({activeUser}) {
 
 // Delete Request
   function handleDeleteAccount() {
+    const confirmDelete = window.confirm("Are you sure you want to delete this account? This action cannot be undone.")
+
+    if (!confirmDelete) {
+      console.log("User chose not to delete the account.");
+      return; 
+    }
 
     fetch(`http://127.0.0.1:5555/users/${id}`, {
       method: "DELETE",
@@ -87,6 +95,8 @@ function UserProfile({activeUser}) {
     .then(response => {
       if (response.ok) {
         console.log("User deleted successfully");
+        handleLogout()
+        history.push("/login")
       } else {
         console.error("Error deleting user")
       }
