@@ -99,6 +99,21 @@ class Movies(Resource):
 
     def get(self):
         return make_response([m.to_dict(rules=("-user_movies", "-users", )) for m in Movie.query.all()], 200)
+    
+    def post(self):
+        data = request.json
+        try:
+            movie = Movie(
+                name = data["name"],
+                image = data["image"],
+                genres = data["genres"]
+            )
+        except ValueError as v_error:
+            return make_response({ "errors": [str(v_error)]}, 400)
+        
+        db.session.add(movie)
+        db.session.commit()
+        return make_response(movie.to_dict(rules=("-user_movies", "-users", )), 201)
 
 api.add_resource(Movies, "/movies")
 
@@ -125,6 +140,26 @@ class UserMovies(Resource):
         return make_response([usermovie.to_dict(rules=("-user", "-movie", )) for usermovie in UserMovie.query.all()])
 
 api.add_resource(UserMovies, "/users-movies")
+
+class UserMoviesById(Resource):
+
+    def patch(self, id):
+        usermovie = UserMovie.query.filter(UserMovie.id == id).first()
+        if not usermovie:
+            return make_response({
+                "Error" : "User movie not found",
+            }, 404)
+        else:
+            data = request.json
+            for attr in data:
+                try:
+                    setattr(usermovie, attr, data[attr])
+                except ValueError as v_error:
+                    return make_response([str(v_error)], 400)
+            db.session.commit()
+            return make_response(usermovie.to_dict(rules=("-user", "-movie", )), 200)
+
+api.add_resource(UserMoviesById, "/users-movies/<int:id>")
 
 class UserLogin(Resource):
 

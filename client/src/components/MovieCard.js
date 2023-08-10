@@ -1,7 +1,66 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Card } from "semantic-ui-react";
 
-function MovieCard({id, name, image, description, genres}) {
+function MovieCard({id, name, image, description, genres, activeUser}) {
+    
+    const [userData, setUserData] = useState([])
+    const [seenMovie, setSeenMovie] = useState(false)
+    const [favoriteMovie, setFavoriteMovie] = useState(false)
+    const [watchlistMovie, setWatchlistMovie] = useState(false)
+    const [userMovieId, setUserMovieId] = useState()
+    
+    useEffect(() => {
+        fetch(`http://127.0.0.1:5555/users/${activeUser}`)
+        .then(r => r.json())
+        .then(data => {
+            const userMovie = data.user_movies.find(currUserMovie => currUserMovie.movie_id === id)
+            setSeenMovie(userMovie.seen)
+            setFavoriteMovie(userMovie.favorite)
+            setWatchlistMovie(userMovie.wishlist)
+            setUserMovieId(userMovie.id)
+        })
+        .catch((error) => console.log("Error: could not fetch user data: ", error))
+      }, []);
+
+    function updateUserMovie(event) {
+        let payload = {}
+        if (event.target.name === "seen"){
+            payload = {seen: !seenMovie}
+            setSeenMovie(!seenMovie)
+        } else if (event.target.name === "favorite") {
+            payload = {favorite: !favoriteMovie}
+            setFavoriteMovie(!favoriteMovie)
+        } else {
+            payload = {wishlist: !watchlistMovie}
+            setWatchlistMovie(!watchlistMovie)
+        }
+
+        fetch(`http://127.0.0.1:5555/users-movies/${userMovieId}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload)
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log("User movies updated successfully");
+            } else {
+                console.error("Error updating user movies")
+            }
+        })
+        .catch(error => {
+            console.error("Error updating user movies: ", error);
+        })
+    }
+
+    const cardButtons = (
+        <div className="movie-card-button-container">
+        <button className="go-button" name="seen" onClick={updateUserMovie}>I've seen this</button>
+        <button className="go-button" name="favorite" onClick={updateUserMovie}>Favorite</button>
+        <button className="go-button" name="wishlist"  onClick={updateUserMovie}>Add to Watchlist</button>
+        </div>
+    )
 
     return (
         <Card style={{
@@ -20,7 +79,7 @@ function MovieCard({id, name, image, description, genres}) {
             <div className="card-content">
                 <div className="card-header">{name}</div>
                 <p className="card__text">A description can go here. But naturally, we're gonna' start with some filler.</p>
-                <button className="go-button">Filler Button?</button>
+                    {activeUser ? cardButtons : null}
             </div>
         </div>
     </Card>
