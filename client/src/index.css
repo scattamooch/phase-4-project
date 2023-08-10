@@ -1,3 +1,4 @@
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~Navbar~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .nav-bar-container {
   display: grid;
@@ -17,7 +18,7 @@
   display: inline-block;
   padding: 10px 20px;
   margin-right: 10px;
-  background-color: #e6e6e6;
+  background-color: rgb(238 226 135);
   color: #333;
   text-decoration: none;
   border: none;
@@ -38,8 +39,11 @@
 }
 
 .nav-bar {
-  background-color: rgb(10, 54, 177);
+  background-image: url('https://pixabay.com/get/gdc29d475bcdf0650ae8bc4abf488b683d20f0b03e745d9cf08b08804fa34dcf7da48d4403945bbc973bfa167f3e9f540_1280.jpg');
+  background-size: cover; 
+  background-repeat: no-repeat;
 }
+
 
 .auth-links-container {
   display: flex;
@@ -51,7 +55,7 @@
     display: inline-block;
     padding: 10px 20px;
     margin-right: 10px;
-    background-color: #e6e6e6;
+    background-color: rgb(238 226 135);
     color: #333;
     text-decoration: none;
     border: none;
@@ -74,7 +78,7 @@
 
 .movies-list {
 text-align: center;
-background-color: aqua;
+background-color: #02aae9;
 }
 
 .centered {
@@ -89,6 +93,7 @@ background-color: aqua;
   align-items: center; 
   justify-content: center; 
   height: 100vh; 
+  background-color: #02aae9;
 }
 
 .login-container h1 {
@@ -113,7 +118,7 @@ background-color: aqua;
   display: inline-block;
   padding: 10px 20px;
   margin-right: 10px;
-  background-color: #e6e6e6;
+  background-color: rgb(238 226 135);
   color: #333;
   text-decoration: none;
   border: none;
@@ -171,7 +176,7 @@ background-color: aqua;
     display: inline-block;
     padding: 10px 20px;
     margin-right: 10px;
-    background-color: #e6e6e6;
+    background-color: rgb(238 226 135);
     color: #333;
     text-decoration: none;
     border: none;
@@ -192,13 +197,17 @@ background-color: aqua;
 
   .users-list {
     text-align: center;
+    background-color: #02aae9;
     }
+
+  
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~Users/UserCards~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~User W/W/F Lists~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .full-page-container {
+  background-color: #02aae9;
   display: grid;
   grid-template-columns: 1fr 2fr; /* Left side takes 1 part, right side takes 2 parts */
   gap: 20px; /* Gap between left and right sides */
