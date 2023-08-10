@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {NavLink} from "react-router-dom";
 
-function Navbar({loginStatus, handleLogout}) {
+function Navbar({loginStatus, handleLogout, activeUser}) {
+
+  
 
   return (
           <nav className="nav-bar">
@@ -10,13 +12,14 @@ function Navbar({loginStatus, handleLogout}) {
             <NavLink exact to="/" className="nav-links">Home</NavLink>
             <NavLink exact to="/movies" className="nav-links">Movies</NavLink>
             <NavLink exact to="/users" className="nav-links">Users</NavLink>
-            <NavLink exact to="/" className="nav-links">Filler</NavLink>
+            <NavLink exact to="/" className="nav-links">{activeUser}</NavLink>
           </div>
           <div className="auth-links-container">
             <NavLink exact to="/login" className="auth-link">Login</NavLink>
             {loginStatus ?
             <NavLink exact to="/login" className="auth-link" onClick={handleLogout}>Sign Out</NavLink> :
             <NavLink exact to="/sign-up" className="auth-link">Sign Up</NavLink> }
+
           </div>
           </div>
       </nav>

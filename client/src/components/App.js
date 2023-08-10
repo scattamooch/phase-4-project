@@ -37,7 +37,9 @@ function App() {
   return (
     <div className="component-container">
       <Router>
-        <Navbar loginStatus={loggedIn} handleLogout={handleLogout}/>
+        <Navbar loginStatus={loggedIn}
+        handleLogout={handleLogout}
+        activeUser={activeUser}/>
         <Switch>
 
           <Route exact path="/">
@@ -53,7 +55,7 @@ function App() {
           </Route>
 
           <Route path="/profile/:id">
-            <UserProfile activeUser={activeUser}/>
+            <UserProfile activeUser={activeUser} handleLogout={handleLogout}/>
           </Route>
           
           <Route path="/login">
