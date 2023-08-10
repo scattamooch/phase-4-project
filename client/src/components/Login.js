@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
+import {useHistory} from "react-router-dom"
 
 function Login({loginStatus, handleLogin}) {
 
-  const [handleUsername, setUsername] = useState("")
-  const [handlePassword, setPassword] = useState("")
+  const history = useHistory();
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
   const [loginError, setLoginError] = useState(null)
 
   function handleUsernameChange(event) {
@@ -27,8 +29,8 @@ function Login({loginStatus, handleLogin}) {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          username: handleUsername,
-          password: handlePassword
+          username: username,
+          password: password
         })
       });
       if (response.ok) {
@@ -37,13 +39,14 @@ function Login({loginStatus, handleLogin}) {
           console.log("Login successful");
           setLoginError(null);
           handleLogin(data);
+          history.push(`/profile/${data.user_id}`);
         } else {
           console.log("Login failed");
           setLoginError("Invalid username or password");
         }
       } else {
         console.log("HTTP request failed with status: " + response.status);
-        setLoginError("An error occurred while logging in");
+        setLoginError("Invalid username or password");
       }
     } catch (error) {
       console.error("Error logging in: ", error);
@@ -55,10 +58,12 @@ function Login({loginStatus, handleLogin}) {
   return (
     <div>
       <div className="login-container">
+        {loginError ? (
+          <h2 className="login-error">{loginError}</h2>
+        ) : null}
         <h1>Welcome Back</h1>
         <input type="text" placeholder="Username" onChange={handleUsernameChange}/>
         <input type="text" placeholder="Password" onChange={handlePasswordChange}/>
-        
         <button className="login-button" onClick={handleSubmit}>Submit</button>
       </div>
     </div>

@@ -80,6 +80,7 @@ function UserProfile({activeUser}) {
 
 // Delete Request
   function handleDeleteAccount() {
+
     fetch(`http://127.0.0.1:5555/users/${id}`, {
       method: "DELETE",
     })

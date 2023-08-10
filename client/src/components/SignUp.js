@@ -1,14 +1,16 @@
 import React, {useState, useEffect} from 'react';
 import TransitionsModal from "./ValidationModal"
+import {useHistory} from "react-router-dom"
 
 function SignUp() {
-
+  const history = useHistory();
   const [handleFirstName, setFirstName] = useState("")
   const [handleLastName, setLastName] = useState("")
   const [handleUsername, setUsername] = useState("")
   const [handlePassword, setPassword] = useState("")
   const [handleProfilePic, setProfilePic] = useState("")
   const [handleAboutMe, setAboutMe] = useState("")
+  const [signUpError, setSignUpError] = useState("")
 
   function handleFirstNameChange(event) {
     setFirstName(event.target.value)
@@ -34,10 +36,9 @@ function SignUp() {
     setAboutMe(event.target.value)
   }
 
-  const newUserData = {}
-  function handleSubmit(event, newUserData) {
+  function handleSubmit(event) {
     event.preventDefault();
-    newUserData = {
+    const newUserData = {
       first_name: handleFirstName,
       last_name: handleLastName,
       username: handleUsername,
@@ -56,6 +57,11 @@ function SignUp() {
         .then((r) => r.json())
         .then((result) => {
           console.log(result)
+          if (result.errors) {
+            setSignUpError(result.errors.join(", "));
+          } else {
+            history.push("/login")
+          }
           }
         )
         .catch((err) => console.log("Error: something went wrong(front end)"))
@@ -64,6 +70,9 @@ function SignUp() {
   return (
     <div>
     <div className="sign-up-container">
+      {signUpError ? (
+        <h2 className="sign-up-error">{signUpError}</h2>
+      ) : null}
       <h1>Welcome to ?</h1>
         <form onSubmit={handleSubmit}>
         <input type="text" placeholder="First name*" onChange={handleFirstNameChange}/>

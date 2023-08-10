@@ -10,24 +10,30 @@ import UserProfile from "./UserProfile.js"
 
 function App() {
 
-  const [loggedIn, setLoggedIn] = useState(false)
-  const [activeUser, setActiveUser] = useState(null)
+  const [loggedIn, setLoggedIn] = useState(localStorage.getItem("isLoggedIn") === "true") 
+  // checks if it's equal to true (someone is logged in) and defaults to false if not
+  // local storage returns null if looking for a key (in this case, ID) that does not exist
+  const [activeUser, setActiveUser] = useState(localStorage.getItem("userId"))
 
   function handleLogin(data) {
     setActiveUser(data.user_id)
+    localStorage.setItem("userId", data.user_id)
     setLoggedIn(true)
+    localStorage.setItem("isLoggedIn", true)
     console.log(`${data}`)
     console.log(`Oh shit, somebody logged in: ${activeUser}`)
   }
 
   function handleLogout() {
     setLoggedIn(false)
+    localStorage.setItem("isLoggedIn", false)
     setActiveUser(null)
+    localStorage.removeItem("userId", null)
     console.log(`Bye ${activeUser}`)
     console.log("Oh shit, somebody logged out")
   }
 
-
+  console.log("Anything")
   return (
     <div className="component-container">
       <Router>

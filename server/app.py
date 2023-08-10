@@ -35,7 +35,7 @@ class Users(Resource):
                 about_me = data["about_me"]
             )
         except ValueError as v_error:
-            return make_response([str(v_error)], 400)
+            return make_response({ "errors": [str(v_error)]}, 400)
         
         db.session.add(user)
         db.session.commit()
