@@ -10,17 +10,20 @@ function MovieCard({id, name, image, description, genres, activeUser}) {
     const [userMovieId, setUserMovieId] = useState()
     
     useEffect(() => {
-        fetch(`http://127.0.0.1:5555/users/${activeUser}`)
-        .then(r => r.json())
-        .then(data => {
-            const userMovie = data.user_movies.find(currUserMovie => currUserMovie.movie_id === id)
-            setSeenMovie(userMovie.seen)
-            setFavoriteMovie(userMovie.favorite)
-            setWatchlistMovie(userMovie.wishlist)
-            setUserMovieId(userMovie.id)
-        })
-        .catch((error) => console.log("Error: could not fetch user data: ", error))
-      }, []);
+        if (activeUser) {
+          fetch(`http://127.0.0.1:5555/users/${activeUser}`)
+            .then(r => r.json())
+            .then(data => {
+              const userMovie = data.user_movies.find(currUserMovie => currUserMovie.movie_id === id);
+              setSeenMovie(userMovie.seen);
+              setFavoriteMovie(userMovie.favorite);
+              setWatchlistMovie(userMovie.wishlist);
+              setUserMovieId(userMovie.id);
+            })
+            .catch((error) => console.log("Error: could not fetch user data: ", error));
+        }
+      }, [activeUser, id]);
+      
 
     function updateUserMovie(event) {
         let payload = {}
@@ -56,9 +59,9 @@ function MovieCard({id, name, image, description, genres, activeUser}) {
 
     const cardButtons = (
         <div className="movie-card-button-container">
-        <button className="go-button" name="seen" onClick={updateUserMovie}>{seenMovie ? "Oops, I didn't see this movie" : "I've seen this movie"}</button>
-        <button className="go-button" name="favorite" onClick={updateUserMovie}>{favoriteMovie ? "Unfavorite" : "Favorite"}</button>
-        <button className="go-button" name="wishlist"  onClick={updateUserMovie}>{watchlistMovie ? "Remove from Watchlist" : "Add to Watchlist"}</button>
+        <button className="list-changer-buttons" name="seen" onClick={updateUserMovie}>{seenMovie ? "Mark not seen" : "Mark seen"}</button>
+        <button className="list-changer-buttons" name="favorite" onClick={updateUserMovie}>{favoriteMovie ? "Unfavorite" : "Favorite"}</button>
+        <button className="list-changer-buttons" name="wishlist"  onClick={updateUserMovie}>{watchlistMovie ? "Unlist" : "Watch Later"}</button>
         </div>
     )
 
@@ -68,7 +71,7 @@ function MovieCard({id, name, image, description, genres, activeUser}) {
             width: "20%",
             }}
             className="card">
-        <div className="project-card">
+        <div className="movie-card">
             <div className="image-container">
                 <img src = {image} alt={name} 
                 style={{

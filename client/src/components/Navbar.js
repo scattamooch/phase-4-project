@@ -6,10 +6,12 @@ function Navbar({loginStatus, handleLogout, activeUser}) {
   const [activeName, setActiveName] = useState("");
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:5555/users/${activeUser}`)
-    .then(r => r.json())
-    .then(data => setActiveName(data.first_name))
-    .catch((error) => console.log("Error: could not fetch user data: ", error))
+    if (activeUser) {
+      fetch(`http://127.0.0.1:5555/users/${activeUser}`)
+        .then((r) => r.json())
+        .then((data) => setActiveName(data.first_name))
+        .catch((error) => console.log('Error: could not fetch user data: ', error));
+    }
   }, [activeUser]);
 
   return (

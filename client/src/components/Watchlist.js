@@ -10,7 +10,7 @@ function Watchlist({userData}) {
 
   return (
     <div>
-      <h1 className="user-list-header">Watchlist</h1>
+      <h1 className="user-list-header">Movies I can't wait to watch...</h1>
       <ul className="user-list-container">
         {filteredMovies.map(watchedMovies => (
           <li key={watchedMovies.movie.id}>
