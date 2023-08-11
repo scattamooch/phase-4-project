@@ -153,10 +153,10 @@ function UserProfile({activeUser, handleLogout}) {
 
   const userInfo = (
     <div className="user-profile-left">
-    <img src={userData.profile_picture} alt={userData.username}/>
-    <h1>Name: {userData.first_name} {userData.last_name}</h1>
-    <h1>Username: {userData.username}</h1>
-    <p>About me: {userData.about_me}</p>
+    <img src={userData.profile_picture} alt={userData.username} className="profile-image"/>
+    <h1 className="profile-name">Name: {userData.first_name} {userData.last_name}</h1>
+    <h1 className="profile-username">Username: {userData.username}</h1>
+    <p className="profile-about">About me: {userData.about_me}</p>
     {profileButtons}
       </div>
   )

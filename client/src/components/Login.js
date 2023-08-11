@@ -61,9 +61,9 @@ function Login({loginStatus, handleLogin}) {
         {loginError ? (
           <h2 className="login-error">{loginError}</h2>
         ) : null}
-        <h1>Welcome Back</h1>
+        <h1 className='log-in-header'>Welcome Back</h1>
         <input type="text" placeholder="Username" onChange={handleUsernameChange}/>
-        <input type="text" placeholder="Password" onChange={handlePasswordChange}/>
+        <input type="password" placeholder="Password" onChange={handlePasswordChange}/>
         <button className="login-button" onClick={handleSubmit}>Submit</button>
       </div>
     </div>

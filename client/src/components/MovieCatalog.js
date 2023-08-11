@@ -96,7 +96,7 @@ function MovieCatalog({loginStatus, activeUser}) {
 
     return(
         <div className="movies-list">
-            <h1 className="movies-header">Movie Catalog Header</h1>
+            <h1 className="movies-header">Movie Catalog</h1>
             {loginStatus ? (
                 <div className="add-movie-container">
                 <h2 className="add-movie-header">Looking for a movie but can't find it? Try adding your own:</h2>

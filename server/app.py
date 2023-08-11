@@ -13,6 +13,24 @@ from config import app, db, api
 
 
 # Views go here!
+def create_user_movies(user):
+    movies = Movie.query.all()
+    if user:
+        for movie in movies:
+            seen_check = False
+            favorited = False
+            wishlisted = False
+
+            user_movie = UserMovie(
+                user=user,
+                movie=movie,
+                favorite=favorited,
+                seen=seen_check,
+                wishlist=wishlisted,
+            )
+
+            db.session.add(user_movie)
+    db.session.commit()
 
 @app.route('/')
 def index():
@@ -39,6 +57,9 @@ class Users(Resource):
         
         db.session.add(user)
         db.session.commit()
+
+        create_user_movies(user)
+        
         return make_response(user.to_dict(rules=("-user_movies", "-movies", )), 201)
 
 api.add_resource(Users, "/users")

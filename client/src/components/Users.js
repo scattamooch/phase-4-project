@@ -66,11 +66,13 @@ function Users() {
   // }, [userId]);
 
   return (
+    <div className="user-list-parent-div">
     <div className="users-list">
-      <h1 className="users-header">Users Header</h1>
+      <h1 className="users-header">Current Users</h1>
       <Card.Group itemsPerRow={4} className="card-group centered">
       {eachUser}
       </Card.Group>
+    </div>
     </div>
   )
 }

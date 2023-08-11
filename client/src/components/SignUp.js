@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import TransitionsModal from "./ValidationModal"
 import {useHistory} from "react-router-dom"
 
 function SignUp() {
@@ -65,16 +64,16 @@ function SignUp() {
           }
           }
         )
-        .catch((err) => console.log("Error: something went wrong(front end)"))
+        .catch((err) => console.log("Error: something went wrong(front end)", err))
   }
 
   return (
-    <div>
+    <div className='sign-up-parent-container'>
     <div className="sign-up-container">
       {signUpError ? (
         <h2 className="sign-up-error">{signUpError}</h2>
       ) : null}
-      <h1>Welcome to ?</h1>
+      <h1 className="sign-up-header">Call the shots with your own movie lists when you join us!</h1>
         <form onSubmit={handleSubmit}>
         <input type="text" placeholder="First name*" onChange={handleFirstNameChange}/>
         <input type="text" placeholder="Last name*" onChange={handleLastNameChange}/>

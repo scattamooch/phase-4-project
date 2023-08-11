@@ -10,7 +10,7 @@ function Favorites({userData}) {
 
   return (
     <div>
-      <h1 className="user-list-header">Favorites</h1>
+      <h1 className="user-list-header">My favorite movies...</h1>
       <ul className="user-list-container">
         {filteredMovies.map(watchedMovies => (
           <li key={watchedMovies.movie.id}>
