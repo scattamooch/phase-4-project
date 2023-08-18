@@ -116,7 +116,7 @@ class Movie(db.Model, SerializerMixin):
         if not new_name:
             raise ValueError("A title must be provided")
         elif len(new_name) > 60:
-            raise ValueError("A title must be shorter than 25 characters")
+            raise ValueError("A title must be shorter than 60 characters")
         else: 
             return new_name
         
