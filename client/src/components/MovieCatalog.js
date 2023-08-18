@@ -83,7 +83,7 @@ function MovieCatalog({loginStatus, activeUser}) {
             {newMovieError ? (
                 <h2 className="new-movie-error">{newMovieError}</h2>
             ) : null}
-            <h2 className="edit-header">Add a movie!</h2>
+            <h2 className="random-unique-name">Add a movie!</h2>
           <input type="text" placeholder="Title*" onChange={handleNewTitle}/>
           <input type="text" placeholder="Paste an image link for a movie poster...*" onChange={handleNewPoster}/>
           <input type="text" placeholder="Genre(s)" onChange={handleNewGenres}/>

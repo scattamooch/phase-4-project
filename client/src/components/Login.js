@@ -46,7 +46,7 @@ function Login({loginStatus, handleLogin}) {
         }
       } else {
         console.log("HTTP request failed with status: " + response.status);
-        setLoginError("Invalid username or password");
+        setLoginError("HTTP request failed");
       }
     } catch (error) {
       console.error("Error logging in: ", error);

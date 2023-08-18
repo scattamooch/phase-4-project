@@ -33,7 +33,6 @@ function App() {
     console.log("Oh shit, somebody logged out")
   }
 
-  console.log("Anything")
   return (
     <div className="component-container">
       <Router>

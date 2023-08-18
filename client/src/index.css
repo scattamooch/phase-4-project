@@ -73,9 +73,18 @@
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #FFFFFF; /* White text color for contrast */
+  color: #FFFFFF; 
   font-size: 3rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Adding a subtle text shadow */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); 
+}
+
+.random-unique-name {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #FFFFFF; 
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); 
 }
 
 
@@ -95,18 +104,18 @@
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #FFFFFF; /* White text color for contrast */
+  color: #FFFFFF; 
   font-size: 2rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Adding a subtle text shadow */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); 
 }
 
 .new-movie-error {
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #FFFFFF; /* White text color for contrast */
+  color: #FFFFFF; 
   font-size: 2rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Adding a subtle text shadow */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); 
 }
 
 .add-movie {
@@ -136,7 +145,7 @@
   font-size: 1.5rem;
   text-align: center;
   padding: 10px;
-  text-shadow: 2px 2px 4px rgb(252, 247, 247); /* Adding a subtle text shadow */
+  text-shadow: 2px 2px 4px rgb(252, 247, 247); 
 }
 
 /* Button Styling */
@@ -176,18 +185,18 @@
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #FFFFFF; /* White text color for contrast */
+  color: #FFFFFF; 
   font-size: 3rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Adding a subtle text shadow */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); 
 }
 
 .login-error {
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #FFFFFF; /* White text color for contrast */
+  color: #FFFFFF; 
   font-size: 3rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Adding a subtle text shadow */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); 
 }
 
 .login-container h1 {
@@ -236,18 +245,18 @@
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #FFFFFF; /* White text color for contrast */
+  color: #FFFFFF; 
   font-size: 3rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Adding a subtle text shadow */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); 
 }
 
 .sign-up-error {
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #FFFFFF; /* White text color for contrast */
+  color: #FFFFFF; 
   font-size: 3rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Adding a subtle text shadow */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); 
 }
 
 .edit-container {
@@ -307,9 +316,9 @@
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #FFFFFF; /* White text color for contrast */
+  color: #FFFFFF; 
   font-size: 2rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Adding a subtle text shadow */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); 
 }
 
 .project-card-user {
@@ -326,9 +335,9 @@
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  color: #FFFFFF; /* White text color for contrast */
+  color: #FFFFFF; 
   font-size: 3rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Adding a subtle text shadow */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); 
 }
 
 .users-list::before {
@@ -384,7 +393,7 @@
 
 /* Add styling for individual movie items */
 .user-list-image {
-  width: 200px; /* Adjust the image width as needed */
+  width: 200px; 
   height: auto;
   margin: 5px;
 }
